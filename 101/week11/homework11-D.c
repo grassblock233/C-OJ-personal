@@ -4,7 +4,7 @@
 int trans(char str)
 {
     int number;
-    number = str - 'A';
+    number = (int)str - 'A';
     return number;
 }
 
@@ -35,14 +35,14 @@ int main()
         for (int i = strlen(str1) - 1; i >= 0; i--)
         {
             sum1 += number1[i] * count;
-            count *= 10;
+            count *= 26;
         }
         count = 1;
         sum2 = 0;
         for (int i = strlen(str2) - 1; i >= 0; i--)
         {
             sum2 += number2[i] * count;
-            count *= 10;
+            count *= 26;
         }
         /*a+b*/
         sum = sum1 + sum2;
@@ -54,7 +54,7 @@ int main()
             sum /= 26;
         }
         /*output*/
-        for (int i = p; i >= 0; i--)
+        for (int i = p - 1; i >= 0; i--)
         {
             printf("%c", out[i]);
         }
